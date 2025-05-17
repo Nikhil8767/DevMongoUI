@@ -26,10 +26,10 @@ app.get("/getUsers", async (req, res) => {
 app.post("/addUser", async (req, res) => {
     const userObj = req.body;
     console.log(req.body);
-    await client.connect(URL);
+    await client.connect(MONGO_URL);
     console.log('Connected successfully to server');
 
-    const db = client.db("apnacollege-db");
+    const db = client.db("docker-learner");
     const data = await db.collection('users').insertOne(userObj);
     console.log(data);
     console.log("data inserted in DB");
