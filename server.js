@@ -6,6 +6,7 @@ const MongoClient = require("mongodb").MongoClient;
 const PORT = 5050;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+//
 
 const MONGO_URL = "mongodb://admin:qwerty@localhost:27017";
 const client = new MongoClient(MONGO_URL);
